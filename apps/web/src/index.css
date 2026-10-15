@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 15% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 10%;
+    
+    --primary: 200 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 120 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 45 90% 60%;
+    --accent-foreground: 220 15% 10%;
+    
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 40%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 200 85% 55%;
+    
+    --radius: 0.75rem;
+
+    /* Colored Section Tokens */
+    --section-gray: 220 14% 96%;
+    --section-gray-foreground: 220 15% 10%;
+    
+    --section-red: 0 84% 96%;
+    --section-red-foreground: 0 84% 20%;
+    
+    --section-green: 142 71% 96%;
+    --section-green-foreground: 142 71% 20%;
+
+    /* Government Section Tokens */
+    --gov-section-bg: 220 14% 98%;
+
+    /* Investment Section Tokens */
+    --investment-section-bg: 210 25% 94%;
+    --investment-section-foreground: 220 15% 10%;
+    --investment-cyan: 199 89% 48%; /* #0EA5E9 */
+    --investment-cyan-foreground: 0 0% 100%;
+
+    /* Custom Table Tokens */
+    --table-header-bg: 226 71% 40%; /* #1E40AF */
+    --table-header-text: 0 0% 100%; /* #FFFFFF */
+    --table-row-odd: 0 0% 100%; /* #FFFFFF */
+    --table-row-even: 220 14% 96%; /* #F3F4F6 */
+    --table-border-color: var(--border);
+
+    /* Tourism Custom Tokens */
+    --success-green: 120 100% 40%;
+    --success-green-foreground: 0 0% 100%;
+    --info-blue: 200 100% 50%;
+    --info-blue-foreground: 0 0% 100%;
+
+    /* Luxury Tokens for Deluxe Ger Camp */
+    --luxury-gold: 43 74% 49%;
+    --luxury-gold-muted: 43 50% 80%;
+    --luxury-dark: 24 15% 12%; 
+    --luxury-dark-foreground: 30 20% 96%; 
+    --luxury-accent: 25 30% 20%;
+
+    /* Chart Colors */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Enhanced Typography Scales */
+    --heading-base: 1.5rem;
+    --heading-lg: 2rem;
+    --heading-xl: 2.5rem;
+    --heading-2xl: 3.5rem;
+    --heading-3xl: 4.5rem;
+    --heading-4xl: 5.5rem;
+    
+    --text-economy-title: 3rem;
+    --text-economy-stat: 4rem;
+    --text-economy-label: 1.25rem;
+
+    /* Expanded Spacing Tokens */
+    --spacing-section-sm: 4rem;
+    --spacing-section-md: 6rem;
+    --spacing-section-lg: 8rem;
+    --spacing-section-xl: 12rem;
+    --spacing-section-2xl: 16rem;
+    
+    --spacing-card-inner: 2.5rem;
+    --spacing-card-huge: 4rem;
+    
+    --spacing-gap-lg: 3rem;
+    --spacing-gap-xl: 4rem;
+    --spacing-gap-2xl: 6rem;
+  }
+  
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 210 20% 96%;
+    
+    --card: 220 13% 13%;
+    --card-foreground: 210 20% 96%;
+    
+    --popover: 220 13% 13%;
+    --popover-foreground: 210 20% 96%;
+    
+    --primary: 200 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 120 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 45 90% 60%;
+    --accent-foreground: 220 15% 10%;
+    
+    --muted: 220 13% 18%;
+    --muted-foreground: 210 15% 65%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 18%;
+    --input: 220 13% 18%;
+    --ring: 200 85% 55%;
+
+    /* Colored Section Tokens (Dark Mode) */
+    --section-gray: 220 13% 15%;
+    --section-gray-foreground: 210 20% 96%;
+    
+    --section-red: 0 40% 15%;
+    --section-red-foreground: 0 84% 90%;
+    
+    --section-green: 142 30% 15%;
+    --section-green-foreground: 142 71% 90%;
+
+    /* Government Section Tokens (Dark Mode) */
+    --gov-section-bg: 220 13% 12%;
+
+    /* Investment Section Tokens (Dark Mode) */
+    --investment-section-bg: 210 20% 18%;
+    --investment-section-foreground: 210 20% 96%;
+    --investment-cyan: 199 89% 48%; /* #0EA5E9 */
+    --investment-cyan-foreground: 0 0% 100%;
+
+    /* Custom Table Tokens (Dark Mode) */
+    --table-header-bg: 226 71% 40%; /* #1E40AF */
+    --table-header-text: 0 0% 100%; /* #FFFFFF */
+    --table-row-odd: 220 13% 13%; /* matching --card */
+    --table-row-even: 220 13% 16%; 
+    --table-border-color: var(--border);
+
+    /* Tourism Custom Tokens (Dark Mode) */
+    --success-green: 120 60% 30%;
+    --info-blue: 200 60% 40%;
+
+    /* Luxury Tokens (Dark Mode) */
+    --luxury-gold: 43 70% 55%;
+    --luxury-dark: 24 15% 10%;
+    --luxury-dark-foreground: 30 20% 96%;
+
+    /* Chart Colors (Dark Mode) */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    font-feature-settings: "kern" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  p {
+    @apply leading-relaxed;
+    max-width: 65ch;
+  }
+}
+
+@layer components {
+  /* Custom Business Table Styles */
+  .custom-business-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  
+  .custom-business-table th {
+    background-color: hsl(var(--table-header-bg));
+    color: hsl(var(--table-header-text));
+    padding: 1rem 1.5rem;
+    border: 1px solid hsl(var(--table-border-color));
+    font-weight: 600;
+  }
+  
+  .custom-business-table td {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid hsl(var(--table-border-color));
+    vertical-align: middle;
+  }
+  
+  .custom-business-table tr:nth-child(even) {
+    background-color: hsl(var(--table-row-even));
+  }
+  
+  .custom-business-table tr:nth-child(odd) {
+    background-color: hsl(var(--table-row-odd));
+  }
+  
+  /* Ensure row-spanning cells retain the base row color to prevent striping inside a single vertical merged cell */
+  .custom-business-table td[rowspan] {
+    background-color: hsl(var(--table-row-odd));
+  }
+
+  /* Chart Container Styles */
+  .chart-wrapper {
+    @apply bg-card rounded-3xl p-6 sm:p-8 border border-border shadow-sm overflow-hidden w-full;
+  }
+
+  .gov-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .gov-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .gov-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .gov-card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border-color: hsl(var(--primary));
+  }
+
+  /* Tourism Cards */
+  .tourism-card {
+    @apply bg-card rounded-2xl border border-border overflow-hidden transition-all duration-300;
+  }
+  .tourism-card:hover {
+    @apply shadow-lg -translate-y-1 border-primary/30;
+  }
+
+  /* Luxury Image Card */
+  .luxury-img-card {
+    @apply relative overflow-hidden rounded-xl border border-white/10 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(212,175,55,0.15)] hover:-translate-y-1;
+  }
+  .luxury-img-card img {
+    @apply transition-transform duration-700 hover:scale-105;
+  }
+
+  /* Photo Gallery Styles */
+  .gallery-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6;
+  }
+  
+  .gallery-item {
+    @apply relative overflow-hidden rounded-2xl bg-muted aspect-square cursor-pointer transition-all duration-300;
+  }
+  
+  .gallery-item img {
+    @apply w-full h-full object-cover transition-transform duration-700 ease-out;
+  }
+  
+  .gallery-item:hover {
+    @apply shadow-xl z-10;
+  }
+  
+  .gallery-item:hover img {
+    @apply scale-110;
+  }
+  
+  .gallery-item::after {
+    content: '';
+    @apply absolute inset-0 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)] rounded-2xl pointer-events-none transition-shadow duration-300;
+  }
+  
+  .gallery-item:hover::after {
+    @apply shadow-[inset_0_0_0_1px_rgba(0,0,0,0.2),0_8px_20px_-4px_rgba(0,0,0,0.1)];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Font Family Utilities */
+  .font-serif-elegant {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Section Colors */
+  .bg-section-gray {
+    background-color: hsl(var(--section-gray));
+    color: hsl(var(--section-gray-foreground));
+  }
+  .bg-section-red {
+    background-color: hsl(var(--section-red));
+    color: hsl(var(--section-red-foreground));
+  }
+  .bg-section-green {
+    background-color: hsl(var(--section-green));
+    color: hsl(var(--section-green-foreground));
+  }
+  .bg-gov-section {
+    background-color: hsl(var(--gov-section-bg));
+  }
+  .bg-investment-section {
+    background-color: hsl(var(--investment-section-bg));
+    color: hsl(var(--investment-section-foreground));
+  }
+  .bg-investment-cyan {
+    background-color: hsl(var(--investment-cyan));
+    color: hsl(var(--investment-cyan-foreground));
+  }
+  
+  /* Tourism Custom Utilities */
+  .bg-success-tint {
+    background-color: hsl(var(--success-green) / 0.1);
+  }
+  .bg-info-tint {
+    background-color: hsl(var(--info-blue) / 0.1);
+  }
+  .text-success {
+    color: hsl(var(--success-green));
+  }
+  .text-info {
+    color: hsl(var(--info-blue));
+  }
+
+  /* Luxury Colors */
+  .bg-luxury-dark {
+    background-color: hsl(var(--luxury-dark));
+    color: hsl(var(--luxury-dark-foreground));
+  }
+  .text-luxury-gold {
+    color: hsl(var(--luxury-gold));
+  }
+  .border-luxury-gold {
+    border-color: hsl(var(--luxury-gold));
+  }
+
+  .text-heading-xl {
+    font-size: var(--heading-xl);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .text-heading-2xl {
+    font-size: var(--heading-2xl);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .text-heading-3xl {
+    font-size: var(--heading-3xl);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  
+  .py-section-lg {
+    padding-top: var(--spacing-section-lg);
+    padding-bottom: var(--spacing-section-lg);
+  }
+  .gap-section-lg {
+    gap: var(--spacing-gap-lg);
+  }
+}
